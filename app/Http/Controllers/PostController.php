@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Posts;
+use App\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller {
@@ -31,13 +32,21 @@ class PostController extends Controller {
 
         return redirect()->route('list_post');
     }
+
     public function index() {
         return view('/post/view_form');
     }
+
     public function listOfPosts() {
+        /** @var User $user */
         $user = auth()->user();
+        $post = new Posts();
+
+//        dd($user->posts()->get());
+//        dd($post->user()->get());
+
         return view('/post/list_post'
-            , ['posts' => Posts::all(), 'user' => $user]
+            , ['posts' => $user->posts()->get(), 'user' => $user]
         );
     }
 }
