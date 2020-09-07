@@ -6,8 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <h4 class="card-header">
-                    Congratulation, <b>{{ $user->name }}</b> <br/>
-                    You are logged in!
+                    All posts
                 </h4>
 
                 <div class="card-body">
@@ -18,14 +17,24 @@
                         </div>
                     @endif
 
-                    <ul>
-                        @foreach($data as $el)
-                        <li>
-                            <p><b>{{$el->name}}</b></p>
-                            <p>{{$el->description}}</p>
-                        </li>
+                    <table class="table">
+                        <tr>
+                            <th>№</th>
+                            <th>Name</th>
+                            <th>description</th>
+                            <th>User id</th>
+                            <th></th>
+                        </tr>
+                        @foreach($posts as $k=>$el)
+                        <tr>
+                            <td>{{$k+1}}</td>
+                            <td><b>{{$el->name}}</b></td>
+                            <td>{{$el->description}}</td>
+                            <td>{{$el->user_id}}</td>
+                            <td><a href="">Edit</a></td>
+                        </tr>
                         @endforeach
-                    </ul>
+                    </table>
 
                 </div>
             </div>

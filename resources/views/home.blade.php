@@ -20,10 +20,13 @@
 
                     <ul>
                         <li>
-                            <a href="{{ route('profile') }}">Edit profile</a>
+                            <a href="{{ route('profile-view') }}">Edit profile</a>
                         </li>
                         <li>
-                            <a href="">Remove profile</a>
+                            <a href="{{route('view_form')}}">Add post</a>
+                        </li>
+                        <li>
+                            <a href="{{route('list_post')}}">List of post</a>
                         </li>
                     </ul>
 
