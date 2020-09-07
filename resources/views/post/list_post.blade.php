@@ -31,7 +31,7 @@
                             <td><b>{{$el->name}}</b></td>
                             <td>{{$el->description}}</td>
                             <td>{{$el->user_id}}</td>
-                            <td><a href="">Edit</a></td>
+                            <td><a href="{{route('post_edit', $el->id)}}">Edit</a></td>
                         </tr>
                         @endforeach
                     </table>

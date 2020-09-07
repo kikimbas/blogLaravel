@@ -33,6 +33,24 @@ class PostController extends Controller {
         return redirect()->route('list_post');
     }
 
+    public function postEdit($id, Request $request) {
+        $posts = new Posts;
+        $post = $posts->find($id);
+
+        if($request->name) {
+            $post->name = $request->name;
+            $post->description = $request->description;
+            $post->save();
+            return redirect()->route('post_edit', $id);
+        }
+
+        return view('/post/post_edit',
+            [
+                'postId' => $id,
+                'post' => $post,
+            ]);
+    }
+
     public function index() {
         return view('/post/view_form');
     }
