@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Posts;
 use App\User;
+use Collective\Html\FormFacade as Form;
 use Illuminate\Http\Request;
 
 class PostController extends Controller {
@@ -36,13 +37,14 @@ class PostController extends Controller {
     public function postEdit($id, Request $request) {
         $posts = new Posts;
         $post = $posts->find($id);
-
         if($request->name) {
             $post->name = $request->name;
             $post->description = $request->description;
             $post->save();
             return redirect()->route('post_edit', $id);
         }
+
+        Form::model($post, array('route' => array('post_edit', $id)));
 
         return view('/post/post_edit',
             [

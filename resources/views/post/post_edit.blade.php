@@ -16,21 +16,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    {!! Form::open() !!}
+                    <div class="form-group">
+                        {!! Form::label('name', 'Title') !!}
+                        {!! Form::text('name',null, ['class' => 'form-control']) !!}
+                    </div>
 
-                        <form action="{{ route('post_edit', $postId) }}" method="post">
-                            @csrf
-                            <div class="form-group">
-                                <label for="title">Title</label>
-                                <input type="text" id="title" name="name" class="form-control" value="{{$post->name}}" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea id="description" name="description" class="form-control" required>{{$post->description}}</textarea>
-                            </div>
+                    <div class="form-group">
+                        {!! Form::label('description', 'Description') !!}
+                        {!! Form::textarea('description',null, ['class' => 'form-control']) !!}
+                    </div>
 
-                            <button type="submit" class="btn btn-primary">Add</button>
-                        </form>
+                    <button type="submit" class="btn btn-primary">Save</button>
 
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
