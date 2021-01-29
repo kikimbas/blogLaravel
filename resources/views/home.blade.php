@@ -20,13 +20,13 @@
 
                     <ul>
                         <li>
-                            <a href="{{ route('profile-view') }}">Edit profile</a>
+                            <a href="{{ route('profile-view') }}">Изменить профиль</a>
                         </li>
                         <li>
-                            <a href="{{route('view_form')}}">Add post</a>
+                            <a href="{{route('view_form')}}">Добавить объект</a>
                         </li>
                         <li>
-                            <a href="{{route('list_post')}}">List of post</a>
+                            <a href="{{route('list_post')}}">Список объектов</a>
                         </li>
                     </ul>
 

@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <h4 class="card-header">
-                    All posts
+                    Все объекты
                 </h4>
 
                 <div class="card-body">

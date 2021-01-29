@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Posts extends Model
+class Objects extends Model
 {
     public function user() {
         return $this->belongsTo('App\User');
+    }
+    public function city() {
+        return $this->belongsTo('App\Models\City');
     }
 }

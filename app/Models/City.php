@@ -4,9 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Posts extends Model
+class City extends Model
 {
-    public function user() {
-        return $this->belongsTo('App\User');
+    protected $table = 'city';
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getId() {
+        return $this->id;
     }
 }

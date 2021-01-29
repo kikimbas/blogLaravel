@@ -27,6 +27,7 @@ class ProfileController extends Controller
 //dd($user);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->phone = $request->input('phone');
         $user->save();
 
         return redirect()->route('profile-view');
